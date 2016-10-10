@@ -29,7 +29,7 @@ function fileSystemSuccess(fileSystem) {
     var rootdir = fileSystem.root;
     var fp = rootdir.toURL();  // Returns Fulpath of local directory
 	
-    fp = fp + "/" + "Pictures" + Folder_Name + "/" + File_Name + "." + ext; // fullpath and name of the file which we want to give
+    fp = fp + "/" + "Pictures/" + Folder_Name + "/" + File_Name + "." + ext; // fullpath and name of the file which we want to give
 	alert(fp);
     // download function call
     filetransfer(download_link, fp);
