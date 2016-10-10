@@ -28,7 +28,7 @@ function fileSystemSuccess(fileSystem) {
     directoryEntry.getDirectory(Folder_Name, { create: true, exclusive: false }, onDirectorySuccess, onDirectoryFail); // creating folder in sdcard
     var rootdir = fileSystem.root;
     var fp = rootdir.toURL();  // Returns Fulpath of local directory
-
+	alert(fp);
     fp = fp + "/" + Folder_Name + "/" + File_Name + "." + ext; // fullpath and name of the file which we want to give
     // download function call
     filetransfer(download_link, fp);
