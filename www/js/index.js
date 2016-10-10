@@ -86,7 +86,7 @@ var app = {
 		
 		setTimeout(function(){
 			app.startBannerAds();
-		},1000)
+		},3000)
     },
     // Bind Event Listeners
     bindAdEvents: function () {
