@@ -120,32 +120,50 @@ $(function(){
 	   }
    })
    
-   $(".title").bind("click",function(){
-		var url = imgurl;
-		var filePath = 'local/path/to/your/file';
-		var fileTransfer = new FileTransfer();
-		var uri = encodeURI(url);
-
-		fileTransfer.download(
-			uri,
-			filePath,
-			function(entry) {
-			alert("ok");
-				console.log("download complete: " + entry.fullPath);
-			},
-			function(error) {
-				alert("fail");
-				console.log("download error source " + error.source);
-				console.log("download error target " + error.target);
-				console.log("upload error code" + error.code);
-			},
-			false,
-			{
-				headers: {
-					"Authorization": "Basic dGVzdHVzZXJuYW1lOnRlc3RwYXNzd29yZA=="
-				}
+   function saveImageToPhone(url, success, error) {
+		var canvas, context, imageDataUrl, imageData;
+		var img = new Image();
+		img.onload = function() {
+			canvas = document.createElement('canvas');
+			canvas.width = img.width;
+			canvas.height = img.height;
+			context = canvas.getContext('2d');
+			context.drawImage(img, 0, 0);
+			try {
+				imageDataUrl = canvas.toDataURL('image/jpeg', 1.0);
+				imageData = imageDataUrl.replace(/data:image\/jpeg;base64,/, '');
+				cordova.exec(
+					success,
+					error,
+					'Canvas2ImagePlugin',
+					'saveImageDataToLibrary',
+					[imageData]
+				);
 			}
-		);
+			catch(e) {
+				error(e.message);
+			}
+		};
+		try {
+			img.src = url;
+		}
+		catch(e) {
+			error(e.message);
+		}
+	}
+
+   $(".title").bind("click",function(){
+   alert(1);
+		var success = function(msg){
+		alert("ok");
+	};
+
+	var error = function(err){
+		console.error(err);
+		alert("fail");
+	};
+
+	saveImageToPhone(imgurl, success, error);
    })
 });
 </script>
