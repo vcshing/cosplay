@@ -27,9 +27,10 @@ function fileSystemSuccess(fileSystem) {
     var directoryEntry = fileSystem.root; // to get root path of directory
     directoryEntry.getDirectory(Folder_Name, { create: true, exclusive: false }, onDirectorySuccess, onDirectoryFail); // creating folder in sdcard
     var rootdir = fileSystem.root;
-    var fp = window.resolveLocalFileSystemURL();  // Returns Fulpath of local directory
-	alert(fp);
+    var fp = "/DCIM";  // Returns Fulpath of local directory
+	
     fp = fp + "/" + Folder_Name + "/" + File_Name + "." + ext; // fullpath and name of the file which we want to give
+	alert(fp);
     // download function call
     filetransfer(download_link, fp);
 }
