@@ -68,7 +68,7 @@ var app = {
        			publisherId:          admobid.banner,  // Required
 				tappxIdAndroid:       "/120940746/Pub-12764-Android-7275",        // Optional
 				tappxShare:           0.5, 
-				isTesting: false, // receiving test ads (do not test with real ads as your account will be banned)				// Optional
+				isTesting: true, // receiving test ads (do not test with real ads as your account will be banned)				// Optional
                 interstitialAdId: admobid.interstitial,
                 bannerAtTop: false, // set to true, to put banner at top
                 overlap: false, // set to true, to allow banner overlap webview
@@ -84,7 +84,9 @@ var app = {
              // alert('cordova-admob plugin not ready.\nAre you in a desktop browser? It won\'t work...');
         }
 		
-		app.startBannerAds();
+		setTimeout(function(){
+			app.startBannerAds();
+		},5000)
     },
     // Bind Event Listeners
     bindAdEvents: function () {
