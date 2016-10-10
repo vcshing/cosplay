@@ -104,7 +104,7 @@
 
 <script>
 callajaximagepage = 1;
-
+imgurl="";
 imgtitle="";
 loadimage(callajaximagepage);
 callajaximagepage++
@@ -126,7 +126,6 @@ $(function(){
    
 
    $(".title").bind("click",function(){
-
 		DownloadFile(imgurl, "Cosplay", MD5(imgurl)) ;
    })
 });
