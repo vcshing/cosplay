@@ -25,7 +25,7 @@ function loadimage(page,type){
 	  //,
     //  method: 'flickr.interestingness.getList',
     //  api_key: '7617adae70159d09ba78cfec73c13be3' // jshint ignore:line
-		per_page :100,
+		per_page :120,
 		page: page
     },
     dataType: 'jsonp',
