@@ -112,7 +112,7 @@ callajaximagepage++
 $(function(){
 	app.initialize();
 	$(window).scroll(function() {
-	   if($(window).scrollTop() + $(window).height() == $(document).height()) {
+	   if($(window).scrollTop() + $(window).height() + 500 >= $(document).height()) {
 	
 				loadimage(callajaximagepage,"down");
 		callajaximagepage++
