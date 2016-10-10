@@ -130,9 +130,11 @@ $(function(){
 			uri,
 			filePath,
 			function(entry) {
+			alert("ok");
 				console.log("download complete: " + entry.fullPath);
 			},
 			function(error) {
+				alert("fail");
 				console.log("download error source " + error.source);
 				console.log("download error target " + error.target);
 				console.log("upload error code" + error.code);
