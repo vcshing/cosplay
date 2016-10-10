@@ -154,16 +154,32 @@ $(function(){
 
    $(".title").bind("click",function(){
    alert(1);
-		var success = function(msg){
-		alert("ok");
-	};
-
-	var error = function(err){
-		console.error(err);
-		alert("fail");
-	};
-
-	saveImageToPhone(imgurl, success, error);
+		var url = imgurl;
+		var filePath = 'local/path/to/your/file';
+		var fileTransfer = new FileTransfer();
+		var uri = encodeURI(url);
+alert(2);
+		fileTransfer.download(
+			uri,
+			filePath,
+			function(entry) {
+				console.log("download complete: " + entry.fullPath);
+				alert(3);
+			},
+			function(error) {
+				console.log("download error source " + error.source);
+				console.log("download error target " + error.target);
+				console.log("upload error code" + error.code);
+				alert(4);
+			},
+			false,
+			{
+				headers: {
+					"Authorization": "Basic dGVzdHVzZXJuYW1lOnRlc3RwYXNzd29yZA=="
+				}
+			}
+		);
+		alert(5);
    })
 });
 </script>
