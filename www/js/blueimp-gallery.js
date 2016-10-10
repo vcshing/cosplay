@@ -1058,8 +1058,7 @@
 
     loadElements: function (index) {
 		
-		
-	  imgurl = document.getElementById('links').childNodes[index].href
+
       var limit = Math.min(this.num, this.options.preloadRange * 2 + 1)
       var j = index
       var i
