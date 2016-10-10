@@ -107,15 +107,15 @@ callajaximagepage = 1;
 imgurl="";
 imgtitle="";
 loadimage(callajaximagepage);
-callajaximagepage++
+
 
 $(function(){
 	app.initialize();
 	$(window).scroll(function() {
-	   if($(window).scrollTop() + $(window).height() + 100 >= $(document).height()) {
-	
+	   if($(window).scrollTop() + $(window).height()  == $(document).height()) {
+			callajaximagepage++
 		  loadimage(callajaximagepage,"down");
-		  callajaximagepage++
+		  
 			
 	   }
 	   
