@@ -44,7 +44,7 @@ function loadimage(page,type){
 		.prop('class', "page" + page)
         .prop('href', baseUrl + '_b.jpg')
         .prop('title', "Download")
-        .attr('data-gallery', '')
+        .attr('data-gallery', "")
        .appendTo(linksContainer)
 		//  carouselLinks.push({
 		//    href: baseUrl + '_c.jpg',

@@ -82,9 +82,9 @@
     var links = $('[data-gallery="' + id + '"]')
    // if (options.filter) {
 		
-    //  links = links.filter(options.filter)
+     links = links.filter(this)
     //}
-	
+//	debugger;
    return new Gallery(links, options)
    
   })

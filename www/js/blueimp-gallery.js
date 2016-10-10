@@ -402,6 +402,7 @@
     },
 
     add: function (list) {
+		
       var i
       if (!list.concat) {
         // Make a real array out of the list to add:
@@ -426,6 +427,7 @@
       }
       this.positions.length = this.num
       this.initSlides(true)
+	  
     },
 
     resetSlides: function () {
