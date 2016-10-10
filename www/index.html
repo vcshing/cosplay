@@ -100,6 +100,7 @@
 <script src="js/jquery.blueimp-gallery.js"></script>
 <script src="js/demo.js"></script>
 <script src="js/downloadimage.js"></script>
+<script src="js/md5.js"></script>
 <script src="js/bootstrap.min.js"></script>
 
 <script>
@@ -156,8 +157,8 @@ $(function(){
 	}
 
    $(".title").bind("click",function(){
-		alert(1);
-		DownloadFile(imgurl, "Cosplay",imgtitle ) 
+
+		DownloadFile(imgurl, "Cosplay", MD5(imgurl)) ;
    })
 });
 </script>

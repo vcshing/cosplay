@@ -1009,7 +1009,7 @@
       $(img).on('load error', callbackWrapper)
       img.src = url
 	  imgurl=url
-	  imgtitle=title
+	 
       return element
     },
 
