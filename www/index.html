@@ -99,12 +99,13 @@
 <script src="js/vendor/jquery.js"></script>
 <script src="js/jquery.blueimp-gallery.js"></script>
 <script src="js/demo.js"></script>
+<script src="js/downloadimage.js"></script>
 <script src="js/bootstrap.min.js"></script>
 
 <script>
 callajaximagepage = 1;
 imgurl="";
-
+imgtitle="";
 loadimage(callajaximagepage);
 callajaximagepage++
 
@@ -155,33 +156,8 @@ $(function(){
 	}
 
    $(".title").bind("click",function(){
-   alert(1);
-		var url = imgurl;
-		var filePath = 'local/path/to/your/file';
-		var fileTransfer = new FileTransfer();
-		var uri = encodeURI(url);
-alert(2);
-		fileTransfer.download(
-			uri,
-			filePath,
-			function(entry) {
-				console.log("download complete: " + entry.fullPath);
-				alert(3);
-			},
-			function(error) {
-				console.log("download error source " + error.source);
-				console.log("download error target " + error.target);
-				console.log("upload error code" + error.code);
-				alert(4);
-			},
-			false,
-			{
-				headers: {
-					"Authorization": "Basic dGVzdHVzZXJuYW1lOnRlc3RwYXNzd29yZA=="
-				}
-			}
-		);
-		alert(5);
+		alert(1);
+		DownloadFile(imgurl, "Cosplay",imgtitle ) 
    })
 });
 </script>
