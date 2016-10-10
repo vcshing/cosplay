@@ -922,6 +922,7 @@
     },
 
     handleSlide: function (index) {
+	
       if (!this.options.continuous) {
         this.updateEdgeClasses(index)
       }
@@ -964,6 +965,8 @@
       var called
       var element
       var title
+	  
+	
       function callbackWrapper (event) {
         if (!called) {
           event = {
@@ -1008,12 +1011,13 @@
       }
       $(img).on('load error', callbackWrapper)
       img.src = url
-	  imgurl=url
+	  
 	 
       return element
     },
 
     createElement: function (obj, callback) {
+		
       var type = obj && this.getItemProperty(obj, this.options.typeProperty)
       var factory = (type && this[type.split('/')[0] + 'Factory']) ||
         this.imageFactory
@@ -1034,6 +1038,7 @@
     },
 
     loadElement: function (index) {
+		
       if (!this.elements[index]) {
         if (this.slides[index].firstChild) {
           this.elements[index] = $(this.slides[index])
@@ -1050,6 +1055,9 @@
     },
 
     loadElements: function (index) {
+		
+		
+	  imgurl = $("#links a img").eq(10).attr("src");
       var limit = Math.min(this.num, this.options.preloadRange * 2 + 1)
       var j = index
       var i
@@ -1218,6 +1226,7 @@
     },
 
     getItemProperty: function (obj, property) {
+	
       var prop = obj[property]
       if (prop === undefined) {
         prop = this.getDataProperty(obj, property)

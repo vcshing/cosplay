@@ -47,12 +47,12 @@ var app = {
         var isAndroid = (/(android)/i.test(navigator.userAgent));
         var adPublisherIds = {
             ios: {
-                banner: 'ca-app-pub-3715336230214756/9015683827',
-                interstitial: 'ca-app-pub-3715336230214756/1492417024'
+                banner: 'ca-app-pub-3715336230214756/1812841029',
+                interstitial: 'ca-app-pub-3715336230214756/3289574225'
             },
             android: {
-                banner: 'ca-app-pub-3715336230214756/9015683827',
-                interstitial: 'ca-app-pub-3715336230214756/1492417024'
+                banner: 'ca-app-pub-3715336230214756/1812841029',
+                interstitial: 'ca-app-pub-3715336230214756/3289574225'
             }
         };
         var admobid;
@@ -66,7 +66,7 @@ var app = {
         if (window.admob) {
             admob.setOptions({
        			publisherId:          admobid.banner,  // Required
-				tappxIdAndroid:       "/120940746/Pub-12612-Android-6260",        // Optional
+				tappxIdAndroid:       "/120940746/Pub-12764-Android-7275",        // Optional
 				tappxShare:           0.5, 
 				isTesting: false, // receiving test ads (do not test with real ads as your account will be banned)				// Optional
                 interstitialAdId: admobid.interstitial,
@@ -83,6 +83,8 @@ var app = {
         } else {
              // alert('cordova-admob plugin not ready.\nAre you in a desktop browser? It won\'t work...');
         }
+		
+		app.startBannerAds();
     },
     // Bind Event Listeners
     bindAdEvents: function () {
