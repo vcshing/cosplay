@@ -71,7 +71,7 @@ var app = {
 				isTesting: false, // receiving test ads (do not test with real ads as your account will be banned)				// Optional
                 interstitialAdId: admobid.interstitial,
                 bannerAtTop: false, // set to true, to put banner at top
-                overlap: true, // set to true, to allow banner overlap webview
+                overlap: false, // set to true, to allow banner overlap webview
                 offsetStatusBar: false, // set to true to avoid ios7 status bar overlap
                 autoShowBanner: true, // auto show banners ad when loaded
                 autoShowInterstitial: true // auto show interstitials ad when loaded
