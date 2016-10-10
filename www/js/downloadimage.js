@@ -25,11 +25,11 @@ function fileSystemSuccess(fileSystem) {
     ext = download_link.substr(download_link.lastIndexOf('.') + 1); //Get extension of URL
 
     var directoryEntry = fileSystem.root; // to get root path of directory
-    directoryEntry.getDirectory(Folder_Name, { create: true, exclusive: false }, onDirectorySuccess, onDirectoryFail); // creating folder in sdcard
+    directoryEntry.getDirectory('Pictures/'+Folder_Name, { create: true, exclusive: false }, onDirectorySuccess, onDirectoryFail); // creating folder in sdcard
     var rootdir = fileSystem.root;
-    var fp = cordova.file.externalRootDirectory;  // Returns Fulpath of local directory
+    var fp = rootdir.toURL();  // Returns Fulpath of local directory
 	
-    fp = fp + "/" + Folder_Name + "/" + File_Name + "." + ext; // fullpath and name of the file which we want to give
+    fp = fp + "/" + "Pictures" + Folder_Name + "/" + File_Name + "." + ext; // fullpath and name of the file which we want to give
 	alert(fp);
     // download function call
     filetransfer(download_link, fp);
