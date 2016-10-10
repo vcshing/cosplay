@@ -19,7 +19,7 @@ function loadimage(page,type){
   $.ajax({
     // Flickr API is SSL only:
     //url: 'https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&photoset_id=72157671363511194&api_key=f5b0519289af95b90dfb5f05f3dafb8f&user_id=47073853@N02&page=1&format=json',
-    url:'https://api.flickr.com/services/rest/?method=flickr.photos.search&text=japan%20cosplay&api_key=f5b0519289af95b90dfb5f05f3dafb8f&format=json',
+    url:'https://api.flickr.com/services/rest/?method=flickr.photos.search&text=japan%20cosplay%20comic&api_key=f5b0519289af95b90dfb5f05f3dafb8f&format=json',
 	data: {
       format: 'json',
 	  //,
