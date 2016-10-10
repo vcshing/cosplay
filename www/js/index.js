@@ -124,7 +124,7 @@ var app = {
 		*/
 
 		app.DeviceonReady();
-		cordova.plugins.backgroundMode.disable();
+		//cordova.plugins.backgroundMode.disable();
         console.log('Received Event: ' + id);
 		//alert(6);
     },
