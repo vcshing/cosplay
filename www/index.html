@@ -170,7 +170,7 @@ $(function(){
 			alert("Fail to Save");
 		};
 
-		saveImageToPhone(imgurl, success, error);
+		saveImageToPhone(encodeURI(imgurl), success, error);
 
 
    })
