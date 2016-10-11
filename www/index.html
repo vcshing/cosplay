@@ -163,11 +163,11 @@ $(function(){
 		//DownloadFile(imgurl, "Cosplay", MD5(imgurl)) ;
 		
 		var success = function(msg){
-			alert("success");
+			alert("Saved to gallery");
 		};
 
 		var error = function(err){
-			alert("fail");
+			alert("Fail to Save");
 		};
 
 		saveImageToPhone(imgurl, success, error);
