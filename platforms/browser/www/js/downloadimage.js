@@ -63,6 +63,12 @@ fileTransfer.download(download_link, fp,
                      alert("download error source " + error.source);
                      //alert("download error target " + error.target);
                      alert("upload error code" + error.code);
-                 }
+                 },
+					false,
+					{
+						headers: {
+							"Authorization": "Basic dGVzdHVzZXJuYW1lOnRlc3RwYXNzd29yZA=="
+						}
+					}
             );
 }

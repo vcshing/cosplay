@@ -84,7 +84,7 @@
 		
      links = links.filter(this)
     //}
-	debugger;
+	
 	imgurl = this.href
 	//debugger;
    return new Gallery(links, options)
