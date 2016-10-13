@@ -11,30 +11,43 @@
 
 /* global blueimp, $ */
 
-function loadimage(page,type){
+function loadimage(page,times){
 	console.log(page);
   'use strict'
-
+           //1476368354748
+   currenttimestamp = moment().valueOf()
+   timeSpace=7000000;
   // Load demo images from flickr:
   $.ajax({
     // Flickr API is SSL only:
     //url: 'https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&photoset_id=72157671363511194&api_key=f5b0519289af95b90dfb5f05f3dafb8f&user_id=47073853@N02&page=1&format=json',
-    url:'https://api.flickr.com/services/rest/?method=flickr.photos.search&text=japan%20cosplay%20comic&api_key=f5b0519289af95b90dfb5f05f3dafb8f&format=json',
+    url:'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=f5b0519289af95b90dfb5f05f3dafb8f&format=json',
 	data: {
       format: 'json',
 	  //,
     //  method: 'flickr.interestingness.getList',
     //  api_key: '7617adae70159d09ba78cfec73c13be3' // jshint ignore:line
-		per_page :120,
-		page: page
+		per_page :100,
+		page: page ,
+		max_upload_date :Math.round(currenttimestamp/1000) - (timeSpace*(times-1)) ,
+		min_upload_date :Math.round(currenttimestamp/1000) - (timeSpace*times),
+		//min_upload_date :Math.round(moment('2016-06-01 00:00:00', 'YYYY-MM-DD HH:mm:ss').valueOf()/1000),
+		sort:"date-taken-desc",
+		text:"japan cosplay comic"
     },
     dataType: 'jsonp',
     jsonp: 'jsoncallback'
   }).done(function (result) {
+	  
+	  pages=result.photos.pages;
+	  count=result.photos.photo.length;
+	  
+	  
     var carouselLinks = []
     var linksContainer = $('#links')
-	
-	
+	console.log(result)
+	console.log(Math.round(currenttimestamp/1000))
+	console.log(Math.round(moment('1990-07-12 00:00:00', 'YYYY-MM-DD HH:mm:ss').valueOf()/1000))
 //debugger;
     // Add the demo images as links with thumbnails to the page:
     $.each(result.photos.photo , function (index, photo) {

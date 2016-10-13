@@ -68,6 +68,7 @@
 
 <!-- The container for the list of example images -->
 <div id="links" class="links"></div>
+<img src="img/loading.gif" style="height:50px;left:50%; position: absolute;margin-right: -50%;transform: translate(-50%);margin: 0;border:0">
 <!-- The Gallery as lightbox dialog, should be a child element of the document body -->
 <div id="blueimp-gallery" class="blueimp-gallery">
     <div class="slides"></div>
@@ -89,6 +90,8 @@
 </ul>
 -->
 <script src="js/vendor/jquery.js"></script>
+<script src="js/random-number.js"></script>
+<script src="js/moment.js"></script>
 <script src="js/jquery.scrollbar.js"></script>
 <script src="js/blueimp-helper.js"></script>
 <script src="js/blueimp-gallery.js"></script>
@@ -104,26 +107,44 @@
 <script src="js/bootstrap.min.js"></script>
 
 <script>
-callajaximagepage = 1;
+r = new randomGenerator(1, 40);
+
+pages="";
+count="";
+times=1;
+
+callajaximagepage =  r.get();
 imgurl="";
 imgtitle="";
-loadimage(callajaximagepage);
+loadimage(callajaximagepage,1);
 initdownload=0;
 
 $(function(){
 	app.initialize();
 	$(window).scroll(function() {
 	   if($(window).scrollTop() + $(window).height()  == $(document).height()) {
-			callajaximagepage++
-		  loadimage(callajaximagepage,"down");
-		  
-			
+			getphoto();
 	   }
 	   
 		if($(window).scrollTop()==0 ) {
 		
 	   }
    })
+   
+   function getphoto(){
+		callajaximagepage =  r.get();
+		loadimage(callajaximagepage,times);
+		if(callajaximagepage > pages || count==0){
+			getphoto();
+			return;
+		}else
+		if(callajaximagepage==0){
+			times++
+			r = new randomGenerator(1, 40);
+			callajaximagepage=r.get();
+			loadimage(callajaximagepage,times);	
+		}
+   }
    
    function saveImageToPhone(url, success, error) {
 		if(initdownload==0){
