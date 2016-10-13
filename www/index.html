@@ -107,22 +107,40 @@
 <script src="js/bootstrap.min.js"></script>
 
 <script>
-r = new randomGenerator(1, 40);
 
-pages="";
+pages=0;
 count="";
 times=1;
 
 imgurl="";
 imgtitle="";
 initdownload=0;
-getphoto();
+	
+	r = new randomGenerator(1, 40);
+	callajaximagepage=r.get();
+	loadimage(callajaximagepage,times);	
+		
 
+   function getphoto(){
+		if(callajaximagepage > pages || count==0){
+			callajaximagepage=r.get();
+			loadimage(callajaximagepage,times);	
+			return;
+		}else if(callajaximagepage==0){
+			times++
+			r = new randomGenerator(1, 40);
+			callajaximagepage=r.get();
+			loadimage(callajaximagepage,times);	
+			return;
+		}
+   }
+   
 $(function(){
 	app.initialize();
 	$(window).scroll(function() {
 	   if($(window).scrollTop() + $(window).height()  == $(document).height()) {
-			getphoto();
+			callajaximagepage=r.get();
+			loadimage(callajaximagepage,times);	
 	   }
 	   
 		if($(window).scrollTop()==0 ) {
@@ -130,20 +148,8 @@ $(function(){
 	   }
    })
    
-   function getphoto(){
-		callajaximagepage =  r.get();
-		loadimage(callajaximagepage,times);
-		if(callajaximagepage > pages || count==0){
-			getphoto();
-			return;
-		}else
-		if(callajaximagepage==0){
-			times++
-			r = new randomGenerator(1, 40);
-			callajaximagepage=r.get();
-			loadimage(callajaximagepage,times);	
-		}
-   }
+
+ 
    
    function saveImageToPhone(url, success, error) {
 		if(initdownload==0){

@@ -41,7 +41,7 @@ function loadimage(page,times){
 	  
 	  pages=result.photos.pages;
 	  count=result.photos.photo.length;
-	  
+	  getphoto();
 	  
     var carouselLinks = []
     var linksContainer = $('#links')
