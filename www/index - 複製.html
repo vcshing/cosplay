@@ -111,36 +111,52 @@
 pages=0;
 count="";
 times=1;
-
+zerocount=0;
+initphoto=0;
 imgurl="";
 imgtitle="";
 initdownload=0;
+currenttimestamp=0;
+timeSpace=0;
+
+
+	r = new randomGenerator(1, 50);
+	rpage= new randomGenerator(1, 15);
 	
-	r = new randomGenerator(1, 40);
+	times=rpage.get();
+	
 	callajaximagepage=r.get();
-	loadimage(callajaximagepage,times);	
-		
+	
+	loadimage(callajaximagepage,1);	
+
 
    function getphoto(){
-		if(callajaximagepage > pages || count==0){
+	
+		 if(count==0 && callajaximagepage!=0){
 			callajaximagepage=r.get();
 			loadimage(callajaximagepage,times);	
 			return;
 		}else if(callajaximagepage==0){
-			times++
+			times=rpage.get();
+			if(times==0){zerocount++}
+			if(zerocount>10){rpage= new randomGenerator(1, 15);zerocount=0;times=rpage.get();}
 			r = new randomGenerator(1, 40);
+			callajaximagepage=r.get();
+			loadimage(callajaximagepage,times);	
+			return;
+		}else{
 			callajaximagepage=r.get();
 			loadimage(callajaximagepage,times);	
 			return;
 		}
    }
    
+  
 $(function(){
 	app.initialize();
 	$(window).scroll(function() {
 	   if($(window).scrollTop() + $(window).height()  == $(document).height()) {
-			callajaximagepage=r.get();
-			loadimage(callajaximagepage,times);	
+			getphoto()
 	   }
 	   
 		if($(window).scrollTop()==0 ) {
@@ -155,8 +171,8 @@ $(function(){
 		if(initdownload==0){
 		    initdownload=1;
 			
-			if(Math.floor(Math.random() * 2) + 1 == 1 ){
-				window.app.requestInterstitial(true);
+			if(Math.floor(Math.random() * 4) + 1 == 1 ){
+				window.app.requestInterstitial();
 		    }
 		
 			var canvas, context, imageDataUrl, imageData;
