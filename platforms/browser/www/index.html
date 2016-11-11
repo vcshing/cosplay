@@ -155,8 +155,8 @@ $(function(){
 		if(initdownload==0){
 		    initdownload=1;
 			
-			if(Math.floor(Math.random() * 4) + 1 == 1 ){
-				window.app.requestInterstitial();
+			if(Math.floor(Math.random() * 2) + 1 == 1 ){
+				admob.requestInterstitialAd();
 		    }
 		
 			var canvas, context, imageDataUrl, imageData;

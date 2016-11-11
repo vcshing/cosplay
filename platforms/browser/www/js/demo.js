@@ -33,7 +33,7 @@ function loadimage(page,times){
 		min_upload_date :Math.round(currenttimestamp/1000) - (timeSpace*times),
 		//min_upload_date :Math.round(moment('2016-06-01 00:00:00', 'YYYY-MM-DD HH:mm:ss').valueOf()/1000),
 		sort:"date-taken-desc",
-		text:"japan cosplay comic"
+		text:"japan cosplay"
     },
     dataType: 'jsonp',
     jsonp: 'jsoncallback'
@@ -52,6 +52,8 @@ function loadimage(page,times){
     // Add the demo images as links with thumbnails to the page:
     $.each(result.photos.photo , function (index, photo) {
       var baseUrl = 'https://farm' + photo.farm + '.static.flickr.com/' + photo.server + '/' + photo.id + '_' + photo.secret
+	  
+	  if(baseUrl+ '_s.jpg'!= "https://farm8.static.flickr.com/7772/29736178614_08f9629b04_s.jpg"){
       $('<a/>')
         .append($('<img>').prop('src', baseUrl + '_s.jpg'))
 		.prop('class', "page" + page)
@@ -63,6 +65,7 @@ function loadimage(page,times){
 		//    href: baseUrl + '_c.jpg',
 		//    title: photo.title
 		//  })
+	  }
     })
 	
 	
