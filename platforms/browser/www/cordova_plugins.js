@@ -1050,6 +1050,32 @@ module.exports = [
         "clobbers": [
             "window.canvas2ImagePlugin"
         ]
+    },
+    {
+        "file": "plugins/cordova-admob/www/admob.js",
+        "id": "cordova-admob.AdMobAds",
+        "pluginId": "cordova-admob",
+        "clobbers": [
+            "window.admob",
+            "window.tappx"
+        ]
+    },
+    {
+        "file": "plugins/cordova-connectivity-monitor/www/connectivity.js",
+        "id": "cordova-connectivity-monitor.connectivity",
+        "pluginId": "cordova-connectivity-monitor",
+        "clobbers": [
+            "window.connectivity"
+        ]
+    },
+    {
+        "file": "plugins/cordova-admob/www/admob.js",
+        "id": "cordova-admob.AdMobAds",
+        "pluginId": "cordova-admob",
+        "clobbers": [
+            "window.admob",
+            "window.tappx"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -1076,7 +1102,9 @@ module.exports.metadata =
     "cordova-plugin-statusbar": "2.1.3",
     "cordova-plugin-vibration": "2.1.2",
     "cordova-plugin-whitelist": "1.2.2",
-    "org.devgeeks.Canvas2ImagePlugin": "0.6.0"
+    "org.devgeeks.Canvas2ImagePlugin": "0.6.0",
+    "cordova-admob": "4.1.16",
+    "cordova-connectivity-monitor": "1.2.2"
 }
 // BOTTOM OF METADATA
 });
