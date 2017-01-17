@@ -167,6 +167,14 @@
         "is_top_level": true,
         "variables": {}
     },
+    "cordova-plugin-extension": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-extension"
+        },
+        "is_top_level": false,
+        "variables": {}
+    },
     "org.devgeeks.Canvas2ImagePlugin": {
         "source": {
             "type": "git",
@@ -174,6 +182,22 @@
             "subdir": "."
         },
         "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-admob": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-admob"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-connectivity-monitor": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-connectivity-monitor"
+        },
+        "is_top_level": false,
         "variables": {}
     }
 }
