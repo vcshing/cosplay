@@ -19,6 +19,51 @@
 
 <style>
 
+#downloadApp {
+	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #f9f9f9), color-stop(1, #e9e9e9) );
+	background:-moz-linear-gradient( center top, #f9f9f9 5%, #e9e9e9 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f9f9', endColorstr='#e9e9e9');
+	background-color:#f9f9f9;
+	-webkit-border-top-left-radius:37px;
+	-moz-border-radius-topleft:37px;
+	border-top-left-radius:37px;
+	-webkit-border-top-right-radius:0px;
+	-moz-border-radius-topright:0px;
+	border-top-right-radius:0px;
+	-webkit-border-bottom-right-radius:37px;
+	-moz-border-radius-bottomright:37px;
+	border-bottom-right-radius:37px;
+	-webkit-border-bottom-left-radius:0px;
+	-moz-border-radius-bottomleft:0px;
+	border-bottom-left-radius:0px;
+	text-indent:0;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	color:#666666;
+	font-family:Arial Black;
+	font-size:15px;
+	font-weight:bold;
+	font-style:italic;
+	height:50px;
+	line-height:50px;
+	width:86px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:1px 1px 0px #ffffff;
+}
+#downloadApp:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #e9e9e9), color-stop(1, #f9f9f9) );
+	background:-moz-linear-gradient( center top, #e9e9e9 5%, #f9f9f9 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#e9e9e9', endColorstr='#f9f9f9');
+	background-color:#e9e9e9;
+}#downloadApp:active {
+	position:relative;
+	top:1px;
+}
+
 </style>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
@@ -67,7 +112,7 @@
 <br>-->
 
 <!-- The container for the list of example images -->
-<button style="width:100%;color:blue;" id="downloadApp">New Release - Click To download The Lastest Professional Version Cosplay Photo</button>
+<button style="width:100%;" id="downloadApp">New Release - Click To download The Lastest Professional Version Cosplay Photo</button>
 <div id="links" class="links"></div>
 <img src="img/loading.gif" style="height:50px;left:50%; position: absolute;margin-right: -50%;transform: translate(-50%);margin: 0;border:0">
 <!-- The Gallery as lightbox dialog, should be a child element of the document body -->
