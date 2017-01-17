@@ -9,7 +9,7 @@
 <title>blueimp Gallery</title>
 <meta name="description" content="blueimp Gallery is a touch-enabled, responsive and customizable image and video gallery, carousel and lightbox, optimized for both mobile and desktop web browsers. It features swipe, mouse and keyboard navigation, transition effects, slideshow functionality, fullscreen support and on-demand content loading and can be extended to display additional content types.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+  <!--  <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />-->
 <!--<link rel="stylesheet" href="css/bootstrap.min.css">-->
 <link rel="stylesheet" href="css/jquery.scrollbar.css">
 <link rel="stylesheet" href="css/blueimp-gallery.css">
@@ -67,6 +67,7 @@
 <br>-->
 
 <!-- The container for the list of example images -->
+<button style="width:100%;color:blue;" id="downloadApp">New Release - Click To download The Lastest Professional Version Cosplay Photo</button>
 <div id="links" class="links"></div>
 <img src="img/loading.gif" style="height:50px;left:50%; position: absolute;margin-right: -50%;transform: translate(-50%);margin: 0;border:0">
 <!-- The Gallery as lightbox dialog, should be a child element of the document body -->
@@ -211,6 +212,17 @@ $(function(){
 
 
    })
+   
+   
+   		$("#downloadApp").bind("click",function(e){
+			e.preventDefault();
+			//alert(1);
+			var target = "_system";
+			var options = "location=yes";
+			var url = "https://play.google.com/store/apps/details?id=com.cosplay.cosplay";
+			window.open(url, target, options);
+			
+		})
 });
 </script>
 </body>
