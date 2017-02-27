@@ -27,7 +27,7 @@ function loadimage(page,times){
 	  //,
     //  method: 'flickr.interestingness.getList',
     //  api_key: '7617adae70159d09ba78cfec73c13be3' // jshint ignore:line
-		per_page :100,
+		per_page :200,
 		page: page ,
 		max_upload_date :Math.round(currenttimestamp/1000) - (timeSpace*(times-1)) ,
 		min_upload_date :Math.round(currenttimestamp/1000) - (timeSpace*times),
