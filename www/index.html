@@ -11,11 +11,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!--  <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />-->
 <!--<link rel="stylesheet" href="css/bootstrap.min.css">-->
+	<link rel="stylesheet" href="css/demo.css">
+    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.min.css">
+    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.colors.min.css">
+
 <link rel="stylesheet" href="css/jquery.scrollbar.css">
 <link rel="stylesheet" href="css/blueimp-gallery.css">
 <link rel="stylesheet" href="css/blueimp-gallery-indicator.css">
 <link rel="stylesheet" href="css/blueimp-gallery-video.css">
-<link rel="stylesheet" href="css/demo.css">
+
 
 <style>
 #downloadApp {
@@ -38,8 +42,7 @@
 
 	
 </style>
-    <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
+
 </head>
 <body>
 <!--
@@ -83,22 +86,90 @@
     <a class="play-pause"></a>
 </div>
 <br>-->
+    <!-- Status bar overlay for full screen mode (PhoneGap) -->
+    <div class="statusbar-overlay"></div>
 
-<!-- The container for the list of example images -->
-<div class="hot-container"><button style="width:100%;" id="downloadApp">New Release - Click To download The Lastest Professional Version Cosplay Photo</button></div>
-<div id="links" class="links"></div>
-<img src="img/loading.gif" style="height:50px;left:50%; position: absolute;margin-right: -50%;transform: translate(-50%);margin: 0;border:0">
-<!-- The Gallery as lightbox dialog, should be a child element of the document body -->
-<div id="blueimp-gallery" class="blueimp-gallery">
-    <div class="slides"></div>
-    <h3 class="title"></h3>
-    <a class="prev">‹</a>
-    <a class="next">›</a>
-    <a class="close">×</a>
-    <a class="play-pause"></a>
+    <!-- Panels overlay-->
+    <div class="panel-overlay"></div>
+    <!-- Left panel with reveal effect-->
+    <div class="panel panel-left panel-reveal">
+        <div class="content-block otherApp">
+            <p>Other Apps</p>
+        </div>
+	    <div class="content-block otherCosplayApp">
+            <p>Cosplay Apps</p>
+        </div>
+		<div class="content-block otherAnimeApp">
+            <p>Anime Apps</p>
+        </div>
+    </div>
 
-   <!-- <ol class="indicator"></ol>-->
-</div>
+	    <!-- Views -->
+    <div class="views">
+        <!-- Your main view, should have "view-main" class -->
+        <div class="view view-main">
+            <!-- Top Navbar-->
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
+                    <div class="center sliding">Cosplay</div>
+                    <div class="right">
+                        <!--
+                          Right link contains only icon - additional "icon-only" class
+                          Additional "open-panel" class tells app to open panel when we click on this link
+                        -->
+                        <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
+            <div class="pages navbar-through toolbar-through">
+                <!-- Page, "data-page" contains page name -->
+                <div data-page="index" class="page">
+                    <!-- Scrollable page content -->
+					<div class="page-content infinite-scroll">
+					
+					
+					
+					
+					<!-- The container for the list of example images -->
+						<!--<div class="hot-container"><button style="width:100%;" id="downloadApp">New Release - Click To download The Lastest Professional Version Cosplay Photo</button></div>-->
+						<div id="links" class="links"></div>
+						<!--<img src="img/loading.gif" style="height:50px;left:50%; position: absolute;margin-right: -50%;transform: translate(-50%);margin: 0;border:0">-->
+						  <div class="infinite-scroll-preloader" style="height:50px;left:50%; position: absolute;margin-right: -50%;transform: translate(-50%);margin: 0;border:0">
+							<div class="preloader"></div>
+						  </div>
+  
+						<!-- The Gallery as lightbox dialog, should be a child element of the document body -->
+						<div id="blueimp-gallery" class="blueimp-gallery">
+							<div class="slides"></div>
+							<h3 class="title"></h3>
+							<a class="prev">‹</a>
+							<a class="next">›</a>
+							<a class="close">×</a>
+							<a class="play-pause"></a>
+
+						   <!-- <ol class="indicator"></ol>-->
+						</div>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+	
+	
+
 <!--
 <ul class="pagination" style="text-align: center;">
   <li><a href="#">1</a></li>
@@ -108,10 +179,12 @@
   <li><a href="#">5</a></li>
 </ul>
 -->
-<script src="js/vendor/jquery.js"></script>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/vendor/jquery.js"></script>
+<script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
+<script type="text/javascript" src="js/my-app.js"></script>
 <script src="js/random-number.js"></script>
 <script src="js/moment.js"></script>
-<script src="js/jquery.scrollbar.js"></script>
 <script src="js/blueimp-helper.js"></script>
 <script src="js/blueimp-gallery.js"></script>
 <script src="js/blueimp-gallery-fullscreen.js"></script>
@@ -155,20 +228,18 @@ initdownload=0;
    }
    
 $(function(){
-	app.initialize();
-	$(window).scroll(function() {
-	   if($(window).scrollTop() + $(window).height()  == $(document).height()) {
+	var loading = false;
+	$$('.infinite-scroll').on('infinite', function () {
+		if (loading) return;
+		loading = true;
+		setTimeout(function () {
+			loading = false;
 			callajaximagepage=r.get();
 			loadimage(callajaximagepage,times);	
-	   }
-	   
-		if($(window).scrollTop()==0 ) {
-		
-	   }
-   })
-   
+		}, 1000);
+	});    
+		   
 
- 
    
    function saveImageToPhone(url, success, error) {
 		if(initdownload==0){
@@ -232,15 +303,36 @@ $(function(){
    })
    
    
-   		$("#downloadApp").bind("click",function(e){
-			e.preventDefault();
-			//alert(1);
-			var target = "_system";
-			var options = "location=yes";
-			var url = "https://play.google.com/store/apps/details?id=com.cosplay.cosplay";
-			window.open(url, target, options);
-			
-		})
+		
+	$(".otherApp").bind("click",function(e){
+		e.preventDefault();
+		//alert(1);
+		var target = "_system";
+		var options = "location=yes";
+		var url = "https://play.google.com/store/apps/developer?id=Sky+Explorer";
+		window.open(url, target, options);
+		
+	})
+	
+	$(".otherCosplayApp").bind("click",function(e){
+		e.preventDefault();
+		//alert(1);
+		var target = "_system";
+		var options = "location=yes";
+		var url = "https://play.google.com/store/apps/details?id=com.cosplay.cosplay";
+		window.open(url, target, options);
+		
+	})
+	
+	$(".otherAmineApp").bind("click",function(e){
+		e.preventDefault();
+		//alert(1);
+		var target = "_system";
+		var options = "location=yes";
+		var url = "https://play.google.com/store/apps/details?id=com.anime.anime";
+		window.open(url, target, options);
+		
+	})
 });
 </script>
 </body>
