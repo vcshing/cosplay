@@ -112,7 +112,7 @@
             <div class="navbar">
                 <div class="navbar-inner">
                     <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
-                    <div class="center sliding">Cosplay</div>
+                    <div class="center sliding title">Cosplay List</div>
                     <div class="right">
                         <!--
                           Right link contains only icon - additional "icon-only" class
@@ -207,6 +207,7 @@ times=1;
 imgurl="";
 imgtitle="";
 initdownload=0;
+enableDownload=0;
 	
 	r = new randomGenerator(1, 40);
 	callajaximagepage=r.get();
@@ -287,19 +288,21 @@ $(function(){
 
 
    $(".title").bind("click",function(){
-		//DownloadFile(imgurl, "Cosplay", MD5(imgurl)) ;
-		
-		var success = function(msg){
-			alert("Saved to gallery");
-		};
+		if(enableDownload!=0){
+	
+			//DownloadFile(imgurl, "Cosplay", MD5(imgurl)) ;
+			
+			var success = function(msg){
+				alert("Saved to gallery");
+			};
 
-		var error = function(err){
-			alert("Fail to Save");
-		};
+			var error = function(err){
+				alert("Fail to Save");
+			};
 
-		saveImageToPhone(encodeURI(imgurl), success, error);
+			saveImageToPhone(encodeURI(imgurl), success, error);
 
-
+		}
    })
    
    
