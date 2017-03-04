@@ -16,7 +16,7 @@ function loadimage(page,times){
   'use strict'
            //1476368354748
    currenttimestamp = moment().valueOf()
-   timeSpace=7000000;
+   timeSpace=14000000;
   // Load demo images from flickr:
   $.ajax({
     // Flickr API is SSL only:
