@@ -61,14 +61,17 @@
       onclose: function () {
         container.trigger('close')
 		enableDownload=0;
-		$(".title").html("Cosplay List");
+		$(".appTitleIcon").html("home");
+		$(".appTitle").html("Cosplay List");
+	
       },
       onclosed: function () {
         container
           .trigger('closed')
           .removeData('gallery')
 	    enableDownload=0;
-		$(".title").html("Cosplay List");
+		$(".appTitleIcon").html("home");
+		$(".appTitle").html("Cosplay List");
       }
     }
     var options = $.extend(
@@ -91,7 +94,8 @@
 	
 	imgurl = this.href
 	enableDownload=1;
-	$(".title").html("Download");
+	$(".appTitleIcon").html("download");
+	$(".appTitle").html("Download");
 	//debugger;
    return new Gallery(links, options)
    
