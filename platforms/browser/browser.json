@@ -90,6 +90,15 @@
         },
         "cordova-admob": {
             "PACKAGE_NAME": "com.phonegap.cosplay"
+        },
+        "cordova-connectivity-monitor": {
+            "PACKAGE_NAME": "com.phonegap.cosplay"
+        },
+        "cordova-plugin-fullscreen": {
+            "PACKAGE_NAME": "com.phonegap.cosplay"
+        },
+        "cordova-plugin-x-socialsharing": {
+            "PACKAGE_NAME": "com.phonegap.cosplay"
         }
     },
     "dependent_plugins": {},
@@ -1153,6 +1162,30 @@
                 "window.admob",
                 "window.tappx"
             ]
+        },
+        {
+            "file": "plugins/cordova-connectivity-monitor/www/connectivity.js",
+            "id": "cordova-connectivity-monitor.connectivity",
+            "pluginId": "cordova-connectivity-monitor",
+            "clobbers": [
+                "window.connectivity"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-fullscreen/www/AndroidFullScreen.js",
+            "id": "cordova-plugin-fullscreen.AndroidFullScreen",
+            "pluginId": "cordova-plugin-fullscreen",
+            "clobbers": [
+                "AndroidFullScreen"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-x-socialsharing/www/SocialSharing.js",
+            "id": "cordova-plugin-x-socialsharing.SocialSharing",
+            "pluginId": "cordova-plugin-x-socialsharing",
+            "clobbers": [
+                "window.plugins.socialsharing"
+            ]
         }
     ],
     "plugin_metadata": {
@@ -1178,6 +1211,9 @@
         "cordova-plugin-vibration": "2.1.2",
         "cordova-plugin-whitelist": "1.2.2",
         "org.devgeeks.Canvas2ImagePlugin": "0.6.0",
-        "cordova-admob": "4.1.16"
+        "cordova-admob": "4.1.16",
+        "cordova-connectivity-monitor": "1.2.2",
+        "cordova-plugin-fullscreen": "1.1.0",
+        "cordova-plugin-x-socialsharing": "5.1.6"
     }
 }

@@ -16,7 +16,7 @@ function loadimage(page,times){
   'use strict'
            //1476368354748
    currenttimestamp = moment().valueOf()
-   timeSpace=7000000;
+   timeSpace=14000000;
   // Load demo images from flickr:
   $.ajax({
     // Flickr API is SSL only:
@@ -33,7 +33,7 @@ function loadimage(page,times){
 		min_upload_date :Math.round(currenttimestamp/1000) - (timeSpace*times),
 		//min_upload_date :Math.round(moment('2016-06-01 00:00:00', 'YYYY-MM-DD HH:mm:ss').valueOf()/1000),
 		sort:"relevance",
-		text:"japan cosplay girl"
+		text:"アニメ漫画"
     },
     dataType: 'jsonp',
     jsonp: 'jsoncallback'

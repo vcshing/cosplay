@@ -69,6 +69,12 @@
         },
         "cordova-admob": {
             "PACKAGE_NAME": "com.phonegap.cosplay"
+        },
+        "cordova-plugin-fullscreen": {
+            "PACKAGE_NAME": "com.phonegap.cosplay"
+        },
+        "cordova-plugin-x-socialsharing": {
+            "PACKAGE_NAME": "com.phonegap.cosplay"
         }
     },
     "dependent_plugins": {

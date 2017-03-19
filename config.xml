@@ -1,4 +1,4 @@
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.phonegap.cosplay" version="23.0.0" android-versionCode="23" >
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.phonegap.cosplay" version="24.0.0" android-versionCode="24" >
   <name>An Cosplay Photo</name>
   <description>Cosplay Photo.</description>
   <author href="http://phonegap.com" email="support@phonegap.com">Sky Explorer</author>
@@ -8,6 +8,7 @@
   <preference name="AndroidPersistentFileLocation" value="Internal" />
 <preference name="AndroidPersistentFileLocation" value="Compatibility" />
   <preference name="fullscreen" value="true" />
+<preference name="loadUrlTimeoutValue" value="700000" />
 
 	<plugin name="cordova-admob" />
 
@@ -16,6 +17,7 @@
 <plugin name="cordova-plugin-fullscreen" source="npm" />
   <plugin name="cordova-plugin-inappbrowser" source="npm" spec="~1.3.0"/>
   <plugin name="cordova-plugin-splashscreen" source="npm" spec="~3.2.1"/>
+  <plugin name="cordova-plugin-x-socialsharing" />
   
   <plugin name="https://github.com/devgeeks/Canvas2ImagePlugin.git" source="npm" />
  
@@ -39,6 +41,9 @@
     <splash src="www/res/screen/android/drawable-port-xhdpi-screen.png" density="port-xhdpi"/>
     <splash src="www/res/screen/android/drawable-port-xxhdpi-screen.png" density="port-xxhdpi"/>
     <splash src="www/res/screen/android/drawable-port-xxxhdpi-screen.png" density="port-xxxhdpi"/>
+				<feature name="SocialSharing">
+			  <param name="android-package" value="nl.xservices.plugins.SocialSharing" />
+			</feature>
   </platform>
   <platform name="ios">
     <icon src="www/res/icon/ios/icon.png" platform="ios" width="57" height="57"/>
@@ -67,6 +72,9 @@
     <splash src="www/res/screen/ios/Default-Portrait~ipad.png" platform="ios" width="768" height="1024"/>
     <splash src="www/res/screen/ios/Default@2x~iphone.png" platform="ios" width="640" height="960"/>
     <splash src="www/res/screen/ios/Default~iphone.png" platform="ios" width="320" height="480"/>
+			<feature name="SocialSharing">
+		  <param name="ios-package" value="SocialSharing" />
+		</feature>
   </platform>
   <platform name="wp8">
     <icon src="www/res/icon/wp8/ApplicationIcon.png" platform="wp8" width="99" height="99"/>

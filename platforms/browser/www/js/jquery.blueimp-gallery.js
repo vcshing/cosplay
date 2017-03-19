@@ -55,16 +55,23 @@
       onslidecomplete: function () {
 		  
         container.trigger('slidecomplete', arguments)
-		
+
 		
       },
       onclose: function () {
         container.trigger('close')
+		enableDownload=0;
+		$(".appTitleIcon").html("home");
+		$(".appTitle").html("Cosplay List");
+	
       },
       onclosed: function () {
         container
           .trigger('closed')
           .removeData('gallery')
+	    enableDownload=0;
+		$(".appTitleIcon").html("home");
+		$(".appTitle").html("Cosplay List");
       }
     }
     var options = $.extend(
@@ -86,6 +93,9 @@
     //}
 	
 	imgurl = this.href
+	enableDownload=1;
+	$(".appTitleIcon").html("download");
+	$(".appTitle").html("Download");
 	//debugger;
    return new Gallery(links, options)
    

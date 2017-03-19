@@ -1069,12 +1069,19 @@ module.exports = [
         ]
     },
     {
-        "file": "plugins/cordova-admob/www/admob.js",
-        "id": "cordova-admob.AdMobAds",
-        "pluginId": "cordova-admob",
+        "file": "plugins/cordova-plugin-fullscreen/www/AndroidFullScreen.js",
+        "id": "cordova-plugin-fullscreen.AndroidFullScreen",
+        "pluginId": "cordova-plugin-fullscreen",
         "clobbers": [
-            "window.admob",
-            "window.tappx"
+            "AndroidFullScreen"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-x-socialsharing/www/SocialSharing.js",
+        "id": "cordova-plugin-x-socialsharing.SocialSharing",
+        "pluginId": "cordova-plugin-x-socialsharing",
+        "clobbers": [
+            "window.plugins.socialsharing"
         ]
     }
 ];
@@ -1104,7 +1111,9 @@ module.exports.metadata =
     "cordova-plugin-whitelist": "1.2.2",
     "org.devgeeks.Canvas2ImagePlugin": "0.6.0",
     "cordova-admob": "4.1.16",
-    "cordova-connectivity-monitor": "1.2.2"
+    "cordova-connectivity-monitor": "1.2.2",
+    "cordova-plugin-fullscreen": "1.1.0",
+    "cordova-plugin-x-socialsharing": "5.1.6"
 }
 // BOTTOM OF METADATA
 });

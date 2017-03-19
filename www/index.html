@@ -103,6 +103,9 @@
 		<div class="content-block otherAnimeApp">
             <p>Anime Apps</p>
         </div>
+		<div class="content-block shareApp">
+            <p>Share App</p>
+        </div>
     </div>
 
 	    <!-- Views -->
@@ -339,6 +342,10 @@ $(function(){
 		var url = "https://play.google.com/store/apps/details?id=com.anime.anime";
 		window.open(url, target, options);
 		
+	})
+
+	$(".shareApp").bind("click",function(e){
+		window.plugins.socialsharing.share("Cosplay Photo", "It is Awesome", "", "https://play.google.com/store/apps/details?id=com.phonegap.cosplay");
 	})
 });
 </script>
