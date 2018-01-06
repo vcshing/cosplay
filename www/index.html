@@ -254,7 +254,11 @@ $(function(){
 		    initdownload=1;
 			
 			if(Math.floor(Math.random() * 2) + 1 == 1 ){
-				admob.requestInterstitialAd();
+				AdMob.showInterstitial();
+				if (AdMob) AdMob.prepareInterstitial({
+					adId: admobid.interstitial,
+					autoShow: false
+				});
 		    }
 		
 			var canvas, context, imageDataUrl, imageData;
