@@ -6,7 +6,7 @@
     <content src="index.html" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="14" />
-	<preference name="android-targetSdkVersion" value="23" />
+    <preference name="android-targetSdkVersion" value="23" />
     <preference name="AndroidPersistentFileLocation" value="Internal" />
     <preference name="AndroidPersistentFileLocation" value="Compatibility" />
     <preference name="fullscreen" value="true" />
@@ -112,4 +112,5 @@
     <plugin name="org.devgeeks.Canvas2ImagePlugin" spec="https://github.com/devgeeks/Canvas2ImagePlugin.git" />
     <engine name="browser" spec="~5.0.3" />
     <plugin name="phonegap-plugin-barcodescanner" spec="~7.0.1" />
+    <plugin name="cordova-plugin-android-permissions" spec="^1.0.0" />
 </widget>

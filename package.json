@@ -8,11 +8,13 @@
     ],
     "plugins": {
       "org.devgeeks.Canvas2ImagePlugin": {},
-      "phonegap-plugin-barcodescanner": {}
+      "phonegap-plugin-barcodescanner": {},
+      "cordova-plugin-android-permissions": {}
     }
   },
   "dependencies": {
     "cordova-browser": "~5.0.3",
+    "cordova-plugin-android-permissions": "^1.0.0",
     "cordova-plugin-canvas2image": "git+https://github.com/devgeeks/Canvas2ImagePlugin.git"
   }
 }
