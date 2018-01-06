@@ -49,12 +49,7 @@ $$(document).on('deviceready', function() {
         isTesting: appConfigArr["isTesting"]
     });
 	
-	
-	if (AdMob) AdMob.prepareInterstitial({
-        adId: admobid.interstitial,
-        autoShow: false,
-        isTesting: appConfigArr["isTesting"]
-    });
+
 });
 
 
