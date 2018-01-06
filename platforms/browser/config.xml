@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget android-versionCode="25" id="com.phonegap.cosplay" version="25.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget android-versionCode="26" id="com.phonegap.cosplay" version="26.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>An Cosplay Photo</name>
     <description>Cosplay Photo.</description>
     <author email="support@phonegap.com" href="http://phonegap.com">Sky Explorer</author>

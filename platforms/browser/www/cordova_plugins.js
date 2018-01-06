@@ -1,23 +1,6 @@
 cordova.define('cordova/plugin_list', function(require, exports, module) {
 module.exports = [
     {
-        "file": "plugins/cordova-connectivity-monitor/www/connectivity.js",
-        "id": "cordova-connectivity-monitor.connectivity",
-        "pluginId": "cordova-connectivity-monitor",
-        "clobbers": [
-            "window.connectivity"
-        ]
-    },
-    {
-        "file": "plugins/cordova-admob/www/admob.js",
-        "id": "cordova-admob.AdMobAds",
-        "pluginId": "cordova-admob",
-        "clobbers": [
-            "window.admob",
-            "window.tappx"
-        ]
-    },
-    {
         "file": "plugins/cordova-plugin-admobpro/www/AdMob.js",
         "id": "cordova-plugin-admobpro.AdMob",
         "pluginId": "cordova-plugin-admobpro",
@@ -670,8 +653,6 @@ module.exports = [
 module.exports.metadata = 
 // TOP OF METADATA
 {
-    "cordova-connectivity-monitor": "1.2.2",
-    "cordova-admob": "4.1.16",
     "cordova-plugin-extension": "1.5.3",
     "cordova-plugin-admobpro": "2.29.29",
     "cordova-plugin-battery-status": "1.1.2",

@@ -7,9 +7,6 @@
     "files": {}
   },
   "installed_plugins": {
-    "cordova-admob": {
-      "PACKAGE_NAME": "io.cordova.hellocordova"
-    },
     "cordova-plugin-admobpro": {
       "PACKAGE_NAME": "io.cordova.hellocordova"
     },
@@ -84,9 +81,6 @@
     }
   },
   "dependent_plugins": {
-    "cordova-connectivity-monitor": {
-      "PACKAGE_NAME": "io.cordova.hellocordova"
-    },
     "cordova-plugin-extension": {
       "PACKAGE_NAME": "io.cordova.hellocordova"
     },
