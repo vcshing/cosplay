@@ -308,9 +308,10 @@ $(function(){
 			};
 
 			var error = function(err){
-				alert("Fail to Save");
+				console.log(err);
+				alert(err);
 			};
-
+			console.log(encodeURI(imgurl));
 			saveImageToPhone(encodeURI(imgurl), success, error);
 
 		}
