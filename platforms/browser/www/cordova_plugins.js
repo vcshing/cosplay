@@ -628,14 +628,6 @@ module.exports = [
         ]
     },
     {
-        "file": "plugins/org.devgeeks.Canvas2ImagePlugin/www/Canvas2ImagePlugin.js",
-        "id": "org.devgeeks.Canvas2ImagePlugin.Canvas2ImagePlugin",
-        "pluginId": "org.devgeeks.Canvas2ImagePlugin",
-        "clobbers": [
-            "window.canvas2ImagePlugin"
-        ]
-    },
-    {
         "file": "plugins/phonegap-plugin-barcodescanner/www/barcodescanner.js",
         "id": "phonegap-plugin-barcodescanner.BarcodeScanner",
         "pluginId": "phonegap-plugin-barcodescanner",
@@ -648,6 +640,14 @@ module.exports = [
         "id": "phonegap-plugin-barcodescanner.BarcodeScannerProxy",
         "pluginId": "phonegap-plugin-barcodescanner",
         "runs": true
+    },
+    {
+        "file": "plugins/org.devgeeks.Canvas2ImagePlugin/www/Canvas2ImagePlugin.js",
+        "id": "org.devgeeks.Canvas2ImagePlugin.Canvas2ImagePlugin",
+        "pluginId": "org.devgeeks.Canvas2ImagePlugin",
+        "clobbers": [
+            "window.canvas2ImagePlugin"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -678,8 +678,8 @@ module.exports.metadata =
     "cordova-plugin-vibration": "2.1.2",
     "cordova-plugin-whitelist": "1.2.2",
     "cordova-plugin-x-socialsharing": "5.1.6",
-    "org.devgeeks.Canvas2ImagePlugin": "0.6.0",
-    "phonegap-plugin-barcodescanner": "7.0.1"
+    "phonegap-plugin-barcodescanner": "7.0.1",
+    "org.devgeeks.Canvas2ImagePlugin": "0.6.0"
 }
 // BOTTOM OF METADATA
 });

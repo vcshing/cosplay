@@ -5,9 +5,13 @@
   "cordova": {
     "platforms": [
       "browser"
-    ]
+    ],
+    "plugins": {
+      "org.devgeeks.Canvas2ImagePlugin": {}
+    }
   },
   "dependencies": {
-    "cordova-browser": "~5.0.3"
+    "cordova-browser": "~5.0.3",
+    "cordova-plugin-canvas2image": "git+https://github.com/devgeeks/Canvas2ImagePlugin.git"
   }
 }
