@@ -207,14 +207,6 @@
     "is_top_level": false,
     "variables": {}
   },
-  "phonegap-plugin-barcodescanner": {
-    "source": {
-      "type": "registry",
-      "id": "phonegap-plugin-barcodescanner@7.0.1"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
   "org.devgeeks.Canvas2ImagePlugin": {
     "source": {
       "type": "registry",

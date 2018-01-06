@@ -315,7 +315,22 @@ $(function(){
 				alert("Fail to Save");
 			};
 			console.log(encodeURI(imgurl));
-			saveImageToPhone(encodeURI(imgurl), success, error);
+			var permissions = cordova.plugins.permissions;
+			permissions.hasPermission(permissions.WRITE_EXTERNAL_STORAGE, function( status ){
+			  if ( status.hasPermission ) {
+				saveImageToPhone(encodeURI(imgurl), success, error);
+			  }
+			  else {
+				permissions.requestPermission(permissions.WRITE_EXTERNAL_STORAGE, function(){
+					saveImageToPhone(encodeURI(imgurl), success, error);
+				}, function(){
+					alert("Fail to Save");
+				});
+			  }
+			});
+
+		
+			
 		}
    })
    
