@@ -7,7 +7,8 @@
       "browser"
     ],
     "plugins": {
-      "org.devgeeks.Canvas2ImagePlugin": {}
+      "org.devgeeks.Canvas2ImagePlugin": {},
+      "phonegap-plugin-barcodescanner": {}
     }
   },
   "dependencies": {
