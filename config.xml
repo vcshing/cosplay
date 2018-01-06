@@ -107,6 +107,6 @@
         <allow-intent href="itms-apps:*" />
     </platform>
     <plugin name="cordova-plugin-admobpro" spec="~2.29.29" />
-    <engine name="browser" spec="~5.0.3" />
     <plugin name="org.devgeeks.Canvas2ImagePlugin" spec="https://github.com/devgeeks/Canvas2ImagePlugin.git" />
+    <engine name="browser" spec="~5.0.3" />
 </widget>

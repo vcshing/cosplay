@@ -235,22 +235,7 @@ enableDownload=0;
 		}
    }
    
-$(function(){
-	var loading = false;
-	$$('.infinite-scroll').on('infinite', function () {
-		if (loading) return;
-		loading = true;
-		setTimeout(function () {
-			loading = false;
-			callajaximagepage=r.get();
-			loadimage(callajaximagepage,times);	
-		}, 1);
-	});    
-		   
-
-   
-   
-   function saveImageToPhone(url, success, error) {
+      function saveImageToPhone(url, success, error) {
 		if(initdownload==0){
 		    initdownload=1;
 			var canvas, context, imageDataUrl, imageData;
@@ -290,6 +275,22 @@ $(function(){
 		}
 	}
 
+$(function(){
+	var loading = false;
+	$$('.infinite-scroll').on('infinite', function () {
+		if (loading) return;
+		loading = true;
+		setTimeout(function () {
+			loading = false;
+			callajaximagepage=r.get();
+			loadimage(callajaximagepage,times);	
+		}, 1);
+	});    
+		   
+
+   
+   
+
 
 
    $(".title").bind("click",function(){
@@ -315,7 +316,6 @@ $(function(){
 			};
 			console.log(encodeURI(imgurl));
 			saveImageToPhone(encodeURI(imgurl), success, error);
-
 		}
    })
    

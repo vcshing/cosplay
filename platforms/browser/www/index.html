@@ -249,6 +249,7 @@ $(function(){
 		   
 
    
+   
    function saveImageToPhone(url, success, error) {
 		if(initdownload==0){
 		    initdownload=1;
@@ -283,6 +284,7 @@ $(function(){
 			}
 			catch(e) {
 				initdownload=0;
+				console.log(e.message);
 				error(e.message);
 			}
 		}
