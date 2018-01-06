@@ -252,14 +252,6 @@ $(function(){
    function saveImageToPhone(url, success, error) {
 		if(initdownload==0){
 		    initdownload=1;
-			
-			if(Math.floor(Math.random() * 2) + 1 == 1 ){
-				if (AdMob) AdMob.prepareInterstitial({
-					adId: admobid.interstitial,
-					autoShow: true
-				});
-		    }
-		
 			var canvas, context, imageDataUrl, imageData;
 			var img = new Image();
 			img.onload = function() {
@@ -280,6 +272,7 @@ $(function(){
 					);
 				}
 				catch(e) {
+					console.log(e.message);
 					error(e.message);
 				}
 				initdownload=0;
@@ -305,11 +298,18 @@ $(function(){
 			
 			var success = function(msg){
 				alert("Saved to gallery");
+				
+				if(Math.floor(Math.random() * 2) + 1 == 1 ){
+					if (AdMob) AdMob.prepareInterstitial({
+						adId: admobid.interstitial,
+						autoShow: true
+					});
+				}
 			};
 
 			var error = function(err){
 				console.log(err);
-				alert(err);
+				alert("Fail to Save");
 			};
 			console.log(encodeURI(imgurl));
 			saveImageToPhone(encodeURI(imgurl), success, error);
