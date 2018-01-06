@@ -5,8 +5,8 @@
     <author email="support@phonegap.com" href="http://phonegap.com">Sky Explorer</author>
     <content src="index.html" />
     <preference name="DisallowOverscroll" value="true" />
-	<preference name="android-minSdkVersion" value="14" />
-	<preference name="android-targetSdkVersion" value="23" />
+    <preference name="android-minSdkVersion" value="14" />
+    <preference name="android-targetSdkVersion" value="23" />
     <preference name="fullscreen" value="true" />
     <preference name="loadUrlTimeoutValue" value="700000" />
     <plugin name="cordova-plugin-network-information" source="npm" spec="~1.2.0" />
@@ -107,6 +107,6 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
-    <engine name="browser" spec="~5.0.3" />
     <plugin name="cordova-plugin-admobpro" spec="~2.29.29" />
+    <engine name="browser" spec="~5.0.3" />
 </widget>

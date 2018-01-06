@@ -10,32 +10,46 @@ var mainView = myApp.addView('.view-main', {
     // Because we want to use dynamic navbar, we need to enable it for this view:
     dynamicNavbar: true
 });
-
+var appConfigArr={
+  "androidAdmobBannerID"	:"ca-app-pub-3715336230214756/1812841029",
+  "androidAdmobInterstitialID"	:"ca-app-pub-3715336230214756/3289574225",
+  "androidAdmobBonusID"	:"",
+  "isTesting" : false
+}
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() {
     console.log("Device is ready!");
+
+
+    // Set AdMobAds options:
+    if (/(android)/i.test(navigator.userAgent)) { // for android & amazon-fireos
+        admobid = {
+            banner: appConfigArr["androidAdmobBannerID"], // or DFP format "/6253334/dfp_example_ad"
+            interstitial: appConfigArr["androidAdmobInterstitialID"],
+            rewardVideoAd: appConfigArr["androidAdmobBonusID"]
+        };
+    } else if (/(ipod|iphone|ipad)/i.test(navigator.userAgent)) { // for ios
+        admobid = {
+            banner: appConfigArr["androidAdmobBannerID"], // or DFP format "/6253334/dfp_example_ad"
+            interstitial: appConfigArr["androidAdmobInterstitialID"],
+            rewardVideoAd: appConfigArr["androidAdmobBonusID"]
+        };
+    } else { // for windows phone
+        admobid = {
+            banner: appConfigArr["androidAdmobBannerID"], // or DFP format "/6253334/dfp_example_ad"
+            interstitial: appConfigArr["androidAdmobInterstitialID"],
+            rewardVideoAd: appConfigArr["androidAdmobBonusID"]
+        };
+    }
+
+    if (AdMob) AdMob.createBanner({
+        adId: admobid.banner,
+        position: AdMob.AD_POSITION.BOTTOM_CENTER,
+        autoShow: true,
+        isTesting: appConfigArr["isTesting"]
+    });
 	
-   // Set AdMobAds options: 
-  admob.setOptions({
-	publisherId:          "ca-app-pub-3715336230214756/1812841029",  // Required 
-	interstitialAdId:     "ca-app-pub-3715336230214756/3289574225",  // Optional 
-	tappxIdAndroid:       "/120940746/Pub-12764-Android-7275",        // Optional 
-	tappxShare:           0.1,
-	isTesting: false, // receiving test ads (do not test with real ads as your account will be banned)				// Optional
-	bannerAtTop: false, // set to true, to put banner at top
-	overlap: true, // set to true, to allow banner overlap webview
-	offsetStatusBar: false, // set to true to avoid ios7 status bar overlap
-	autoShowBanner: true, // auto show banners ad when loaded
-	autoShowInterstitial: true // auto show interstitials ad when loaded	// Optional 
-  });
-  
-  // Start showing banners (atomatic when autoShowBanner is set to true) 
-  admob.createBannerView();
-  
-  // Request interstitial (will present automatically when autoShowInterstitial is set to true) 
-  //admob.requestInterstitialAd();
-    
-	//navigator.vibrate([1000, 1000, 3000, 1000, 5000]);
+
 });
 
 

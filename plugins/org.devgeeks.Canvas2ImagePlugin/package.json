@@ -46,11 +46,10 @@
     }
   },
   "_requiredBy": [
-    "#USER",
-    "/"
+    "#USER"
   ],
   "_resolved": "git+https://github.com/devgeeks/Canvas2ImagePlugin.git#7cb80bb880373f788b5f3c653605e1d533baeabc",
-  "_shasum": "9b79bb2898e5b78982abb451a953bbec1dbf3819",
+  "_shasum": "358c28f6056e5a1604f313848b9fa20d74fdf179",
   "_shrinkwrap": null,
   "_spec": "https://github.com/devgeeks/Canvas2ImagePlugin.git",
   "_where": "E:\\project\\api\\GitHub\\cosplay",

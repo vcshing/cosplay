@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget android-versionCode="26" id="com.phonegap.cosplay" version="26.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget android-versionCode="27" id="com.phonegap.cosplay" version="27.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>An Cosplay Photo</name>
     <description>Cosplay Photo.</description>
     <author email="support@phonegap.com" href="http://phonegap.com">Sky Explorer</author>
@@ -14,7 +14,7 @@
     <allow-intent href="geo:*" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="14" />
-    <preference name="AndroidPersistentFileLocation" value="Compatibility" />
+    <preference name="android-targetSdkVersion" value="23" />
     <preference name="fullscreen" value="true" />
     <preference name="loadUrlTimeoutValue" value="700000" />
 </widget>
