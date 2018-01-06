@@ -1,0 +1,17 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "An Cosplay Photo",
+  "short_name": "An Cosplay Photo",
+  "version": "com.phonegap.cosplay",
+  "description": "Cosplay Photo.",
+  "author": "Sky Explorer",
+  "icons": [
+    {
+      "src": "icon.png",
+      "type": "image/png",
+      "sizes": "undefinedxundefined"
+    }
+  ],
+  "start_url": "index.html"
+}
